@@ -1,0 +1,4 @@
+- HW: Use project as a template to create a basic blogging application
+    - No concept of user account or logging in
+    - User will enter text, sign name, date will be saved
+    - Posts should be editable and delete-able
