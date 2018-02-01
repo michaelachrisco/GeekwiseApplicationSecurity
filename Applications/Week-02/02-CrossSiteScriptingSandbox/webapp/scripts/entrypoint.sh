@@ -1,5 +1,6 @@
 #!/bin/sh
-echo "====== Begin entrypoint.sh ======"
+echo "====== Begin webapp entrypoint.sh ======"
+#sh scripts/wait-for -t 10 0.0.0.0:5432 -- echo "POSTGRES is up"
 npm install -g nodemon
 npm install --no-bin-links --no-optional
 npm start

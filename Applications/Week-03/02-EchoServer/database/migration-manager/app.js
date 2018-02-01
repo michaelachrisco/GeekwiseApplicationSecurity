@@ -13,20 +13,6 @@ const cn = {
 console.log(cn);
 const db = pgp(cn);
 
-function try_db(){
-  let maxTimes = 3;
-  let query = `SELECT * FROM migrations ORDER BY id ASC`;
-  for(i=0; i>3; i++){
-    try{
-      db.any(query);
-    }
-    catch{
-    //Do operation
-    }
-    wait(5000);
-  }
-}
-
 console.log('Running Migrations...');
 migrations();
 

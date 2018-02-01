@@ -1,5 +1,7 @@
 #!/bin/sh
-echo "====== Begin entrypoint.sh ======"
+echo "====== Begin CrossSiteScripting enrypoint.sh ======"
+#sh scripts/new-wait-for.sh 0.0.0.0:5432 -- echo "POSTGRES is up"
+sh "sleep 5;nc -lk 0.0.0.0 5432;"
 npm install -g nodemon
 npm install --no-bin-links --no-optional
 npm start

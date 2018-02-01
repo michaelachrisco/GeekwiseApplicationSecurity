@@ -13,27 +13,27 @@ services:
     image: "node:8"
     env_file: .env
     working_dir: /home/node/app/migration-manager
-    depends_on:
+    depends_on: 
       - postgres
     networks:
       - backend
     volumes:
       - ./database:/home/node/app
-    entrypoint: "scripts/entrypoint.sh"
-  webapp:
+    entrypoint: "/home/node/app/migration-manager/scripts/entrypoint.sh"
+  server:
     image: "node:8"
     env_file: .env
-    working_dir: /home/node/webapp
-    depends_on:
+    working_dir: /home/node/server
+    depends_on: 
       - postgres
       - migrations
     networks:
       - backend
     ports:
-      - "8080:80"
+      - "3399:3000"
     volumes:
-      - ./webapp:/home/node/webapp
-    entrypoint: "/home/node/webapp/scripts/entrypoint.sh"
+      - ./server:/home/node/server
+    entrypoint: "/home/node/server/scripts/entrypoint.sh"
 
 networks:
   backend:
